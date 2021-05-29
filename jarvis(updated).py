@@ -91,8 +91,8 @@ def sendemail(to,content):
     server=smtplib.SMTP("smtp.gmail.com",587)
     server.eclo()
     server.starttls()
-    server.login('sadiqshaik1211@gmail.com','Sadiqshaik@1234')
-    server.sendmail('sadiqshaik1211@gmail.com',to,content)
+    server.login('email','password')
+    server.sendmail('mail id to send',to,content)
     server.close()
 
 def screenshot():
