@@ -13,13 +13,13 @@ en=pyttsx3.init()
 
 #en.say("hello this is Jarvis")
 voices = en.getProperty('voices')
-en.setProperty('voice' ,voices[1].id)
+en.setProperty('voice' ,voices[0].id)
 def speak(audio):
     en.say(audio)
 
     en.runAndWait()
 
-speak("hey boss this is friday and I am ai assistant")
+speak("hey boss this is Jarvis, and I am an A.I assistant")
 
 def time():
     Time=datetime.datetime.now().strftime("%I:%M:%S")
@@ -57,7 +57,7 @@ def wishme():
         speak("good night")
     else:
         speak("good night")
-    speak("friday at your service tell meh how can i help you")
+    speak("Jarvis at your service, tell meh how can i help you")
 
 #wishme()
 
