@@ -11,6 +11,8 @@ import psutil
 import pyjokes
 from covid import Covid
 from quotes import Quotes
+
+
 en=pyttsx3.init()
 
 
