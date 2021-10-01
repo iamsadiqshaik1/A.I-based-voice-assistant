@@ -1,5 +1,6 @@
 import pyttsx3
 import datetime
+import os
 import speech_recognition as sr
 import wikipedia
 import smtplib
@@ -12,22 +13,21 @@ from covid import Covid
 from quotes import Quotes
 en=pyttsx3.init()
 
-#en.say("hello this is Jarvis")
+
 voices = en.getProperty('voices')
-en.setProperty('voice' ,voices[1].id)
+en.setProperty('voice' ,voices[0].id)
 def speak(audio):
     en.say(audio)
 
     en.runAndWait()
 
-speak("hey boss this is friday and I am ai assistant")
+speak("hey boss, this is Jarvis, and I am an A.I. assistant")
 
 def time():
     Time=datetime.datetime.now().strftime("%I:%M:%S")
     speak("time in  24 hrs format and is")
     speak(Time)
 
-#time()
 def quotes():
 
     quotes = Quotes()
@@ -46,7 +46,6 @@ def date():
     speak(month)
     speak("year is")
     speak(year)
-#date()
 
 def wishme():
     speak("welcome back boss!")
@@ -65,9 +64,7 @@ def wishme():
         speak("good night")
     else:
         speak("good night")
-    speak("friday at your service tell meh how can i help you")
-
-#wishme()
+    speak("Jarvis at your service, tell me how can i help you")
 
 def takecommand():
     r=sr.Recognizer()
@@ -83,7 +80,7 @@ def takecommand():
 
     except Exception as e:
         print(e)
-        speak("say that again boss....")
+        speak("I didn't get you, boss....")
         return "none"
     return query
 
@@ -97,7 +94,7 @@ def sendemail(to,content):
 
 def screenshot():
     img = pyautogui.screenshot()
-    img.save("C:\\Users\\sadiq shaik\\Desktop\\car\\ss.png")
+    img.save(f"{os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')} car\\ss.png")
 
 def cpu():
     usage = str(psutil.cpu_percent())
@@ -131,10 +128,16 @@ def covid():
     speak(data5)
     speak("the total recovered cases are")
     speak(data6)
+
+
 def name():
     speak("my name is friday")
+
+
 def boss():
     speak("sadiq shaik")
+
+
 if __name__=="__main__":
     wishme()
     while True:
@@ -215,5 +218,5 @@ if __name__=="__main__":
             speak("it is really good right hahahaha")
 
         elif "offline" in query:
-            speak("yep   done!")
+            speak("yep,  done!")
             quit()
