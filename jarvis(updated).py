@@ -201,7 +201,7 @@ if __name__=="__main__":
             speak("you said to remember that "+remember.read())
 
         elif 'play songs'in query:
-            song_dir='C:\\Users\sadiq shaik\Desktop\Musicfiles'
+            song_dir= rf"{os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')}\Musicfiles"
             songs=os.listdir(song_dir)
             os.startfile(os.path.join(song_dir,songs[1]))
 
