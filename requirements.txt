@@ -30,7 +30,7 @@ protobuf==3.17.3
 psutil==5.8.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
-PyAudio @ file:///C:/Users/Akshat/Downloads/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
+PyAudio
 PyAutoGUI==0.9.53
 pydantic==1.8.2
 PyGetWindow==0.0.9
